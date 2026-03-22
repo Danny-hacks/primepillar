@@ -60,11 +60,11 @@ export default function Home() {
 
         {/* Content */}
         <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', padding: '0 24px', maxWidth: 960, animation: 'fadeUp .8s .2s both' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, border: '1px solid rgba(243,180,51,0.35)', padding: '8px 22px', fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', fontWeight: 500, color: 'var(--gold)', marginBottom: 28 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, border: '1px solid rgba(243,180,51,0.35)', borderRadius: 'var(--radius)', padding: '8px 22px', fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', fontWeight: 500, color: 'var(--gold)', marginBottom: 28 }}>
             <span style={{ width: 5, height: 5, background: 'var(--gold)', borderRadius: '50%', display: 'inline-block' }}/>
             Mauritius Real Estate · Est. 2011 · FRICS Certified
           </div>
-          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(48px, 8vw, 96px)', fontWeight: 300, lineHeight: 1.04, color: 'var(--cream)' }}>
+          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(36px, 7vw, 72px)', fontWeight: 600, lineHeight: 1.1, color: 'var(--cream)' }}>
             Discover <em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>Extraordinary</em><br />Properties in Mauritius
           </h1>
           <p style={{ fontSize: 16, fontWeight: 300, color: 'rgba(245,240,232,.65)', maxWidth: 480, margin: '20px auto 0' }}>
@@ -90,7 +90,7 @@ export default function Home() {
             ))}
           </div>
           {/* Search Box */}
-          <div style={{ background: 'rgba(250,250,247,0.97)', backdropFilter: 'blur(20px)', padding: '24px 28px', display: 'flex', gap: 16, alignItems: 'flex-end', flexWrap: 'wrap' }}>
+          <div style={{ background: 'rgba(250,250,247,0.97)', backdropFilter: 'blur(20px)', padding: '24px 28px', display: 'flex', gap: 16, alignItems: 'flex-end', flexWrap: 'wrap', borderRadius: '0 0 var(--radius) var(--radius)' }}>
             <div style={sfStyle}>
               <label style={sfLabelStyle}>Property Type</label>
               <select style={sfSelectStyle} value={sType} onChange={e => setSType(e.target.value)}>
@@ -130,7 +130,7 @@ export default function Home() {
         </div>
 
         {/* Stats strip */}
-        <div className="hero-stats-strip" style={{ position: 'relative', zIndex: 2, display: 'flex', flexWrap: 'wrap', marginTop: 28, border: '1px solid rgba(243,180,51,.2)', background: 'rgba(20,10,2,.5)', backdropFilter: 'blur(12px)', animation: 'fadeUp .8s 1s both' }}>
+        <div className="hero-stats-strip" style={{ position: 'relative', zIndex: 2, display: 'flex', flexWrap: 'wrap', marginTop: 28, border: '1px solid rgba(243,180,51,.2)', borderRadius: 'var(--radius)', background: 'rgba(20,10,2,.5)', backdropFilter: 'blur(12px)', animation: 'fadeUp .8s 1s both' }}>
           {[['13+','Years Active'],['500+','Properties Valued'],['15+','Bank Partners'],['150+','Happy Clients']].map(([n,l]) => (
             <div key={l} style={{ padding: '16px 28px', textAlign: 'center', borderRight: '1px solid rgba(243,180,51,.15)', flex: '1 1 auto', minWidth: 120 }}>
               <div style={{ fontFamily: 'var(--font-display)', fontSize: 28, fontWeight: 500, color: 'var(--gold)', lineHeight: 1 }}>{n}</div>
@@ -171,33 +171,35 @@ export default function Home() {
 
       {/* ── SERVICES ── */}
       <section className="sec" style={{ background: 'var(--card)' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 20, marginBottom: 48 }}>
-          <div>
-            <span className="eyebrow reveal">What We Do</span>
-            <h2 className="sec-title reveal rd1">A Full Spectrum of<br /><em>Real Estate Services</em></h2>
-            <div className="gold-rule reveal rd2" />
-            <p className="lead reveal rd2">From valuation to luxury development, we bring unmatched expertise to every stage of your real estate journey.</p>
-          </div>
-          <button className="btn btn-outline reveal" onClick={() => goto('services')}>
+        <div className="text-center" style={{ marginBottom: 52 }}>
+          <span className="eyebrow reveal">What We Do</span>
+          <h2 className="sec-title reveal rd1">A Full Spectrum of <em>Real Estate Services</em></h2>
+          <div className="gold-rule center reveal rd2" />
+          <p className="lead reveal rd2" style={{ margin: '0 auto 24px' }}>From valuation to luxury development, we bring unmatched expertise to every stage of your real estate journey.</p>
+          <button className="btn btn-outline reveal rd3" onClick={() => goto('services')}>
             All Services
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2 }} className="srv-grid-resp">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }} className="srv-grid-resp">
           {SERVICES.map((s, i) => (
             <div key={s.num} className={`reveal rd${(i % 3) + 1}`}
               onClick={() => goto('services')}
-              style={{ background: 'var(--bg-warm)', border: '1px solid var(--border)', padding: '40px 34px', cursor: 'pointer', position: 'relative', overflow: 'hidden', transition: 'border-color .3s, transform .3s, box-shadow .3s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--gold)'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-3px)'; (e.currentTarget as HTMLDivElement).style.boxShadow = 'var(--shadow-md)'; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--border)'; (e.currentTarget as HTMLDivElement).style.transform = ''; (e.currentTarget as HTMLDivElement).style.boxShadow = ''; }}
+              style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '36px 30px', cursor: 'pointer', position: 'relative', overflow: 'hidden', transition: 'border-color .3s, transform .3s, box-shadow .3s' }}
+              onMouseEnter={e => { const d = e.currentTarget as HTMLDivElement; d.style.borderColor = 'var(--gold)'; d.style.transform = 'translateY(-4px)'; d.style.boxShadow = 'var(--shadow-md)'; }}
+              onMouseLeave={e => { const d = e.currentTarget as HTMLDivElement; d.style.borderColor = 'var(--border)'; d.style.transform = ''; d.style.boxShadow = ''; }}
             >
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: 60, fontWeight: 300, color: 'rgba(243,180,51,.1)', position: 'absolute', top: 12, right: 18, lineHeight: 1 }}>{s.num}</span>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.2" style={{ marginBottom: 22 }}>
-                <path d={s.icon}/>{s.num === '03' && <><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></>}{s.num === '04' && <polyline points="22 4 12 14.01 9 11.01"/>}
-              </svg>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 21, fontWeight: 500, color: 'var(--brown-deep)', marginBottom: 10 }}>{s.title}</h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
+                <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-sm)', background: 'rgba(243,180,51,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dk)" strokeWidth="1.5">
+                    <path d={s.icon}/>{s.num === '03' && <><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></>}{s.num === '04' && <polyline points="22 4 12 14.01 9 11.01"/>}
+                  </svg>
+                </div>
+                <span style={{ fontSize: 32, fontWeight: 700, color: 'var(--gold)', opacity: 0.25, lineHeight: 1 }}>{s.num}</span>
+              </div>
+              <h3 style={{ fontSize: 17, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 10 }}>{s.title}</h3>
               <p style={{ fontSize: 13, fontWeight: 300, color: 'var(--text-mid)', lineHeight: 1.75 }}>{s.desc}</p>
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 20, fontSize: 10, letterSpacing: 2, textTransform: 'uppercase', fontWeight: 600, color: 'var(--gold-dk)' }}>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 20, fontSize: 11, letterSpacing: 1.5, textTransform: 'uppercase', fontWeight: 600, color: 'var(--gold-dk)' }}>
                 Learn More
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </span>
@@ -219,7 +221,7 @@ export default function Home() {
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 48 }} className="testi-grid-resp">
           {TESTIMONIALS.map((t, i) => (
-            <div key={i} className={`reveal rd${i + 1}`} style={{ background: 'rgba(255,255,255,.04)', border: '1px solid rgba(74,48,20,.5)', padding: '38px 32px', transition: 'border-color .3s, transform .3s' }}
+            <div key={i} className={`reveal rd${i + 1}`} style={{ background: 'rgba(255,255,255,.04)', border: '1px solid rgba(74,48,20,.5)', padding: '38px 32px', borderRadius: 'var(--radius)', transition: 'border-color .3s, transform .3s' }}
               onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(243,180,51,.4)'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-3px)'; }}
               onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(74,48,20,.5)'; (e.currentTarget as HTMLDivElement).style.transform = ''; }}>
               <div style={{ display: 'flex', gap: 3, marginBottom: 20 }}>
@@ -262,12 +264,12 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div style={{ padding: '100px 80px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2, alignContent: 'center' }} className="why-right-resp">
+        <div style={{ padding: '100px 80px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, alignContent: 'center' }} className="why-right-resp">
           {[['13+','Years in Business'],['500+','Properties Valued'],['15+','Banking Partners'],['100%','Client Satisfaction']].map(([n,l], i) => (
-            <div key={l} className={`reveal rd${i + 1}`} style={{ background: 'var(--card)', border: '1px solid var(--border)', padding: '36px 28px', transition: 'border-color .3s' }}
+            <div key={l} className={`reveal rd${i + 1}`} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '36px 28px', transition: 'border-color .3s' }}
               onMouseEnter={e => (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--gold)'}
               onMouseLeave={e => (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--border)'}>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 48, fontWeight: 300, color: 'var(--gold-dk)', lineHeight: 1 }}>{n}</div>
+              <div style={{ fontSize: 44, fontWeight: 700, color: 'var(--gold-dk)', lineHeight: 1 }}>{n}</div>
               <div style={{ fontSize: 11, letterSpacing: 1.5, textTransform: 'uppercase', color: 'var(--text-muted)', marginTop: 10 }}>{l}</div>
             </div>
           ))}

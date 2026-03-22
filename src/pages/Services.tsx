@@ -75,7 +75,7 @@ export default function Services() {
           From RICS-certified valuations to luxury property development, Prime Pillar delivers a complete suite of professional real estate services — all under one roof.
         </p>
         {/* Service number strip */}
-        <div className="reveal rd3" style={{ display: 'flex', justifyContent: 'center', gap: 0, marginTop: 48, border: '1px solid var(--border)', background: 'var(--card)', maxWidth: 720, margin: '48px auto 0', flexWrap: 'wrap' }}>
+        <div className="reveal rd3" style={{ display: 'flex', justifyContent: 'center', gap: 0, marginTop: 48, border: '1px solid var(--border)', borderRadius: 'var(--radius)', background: 'var(--card)', maxWidth: 720, margin: '48px auto 0', flexWrap: 'wrap' }}>
           {SERVICES.map(s => (
             <div key={s.num} style={{ padding: '20px 28px', borderRight: '1px solid var(--border)', textAlign: 'center', flex: '1 1 auto', minWidth: 100 }}>
               <div style={{ fontFamily: 'var(--font-display)', fontSize: 32, fontWeight: 300, color: 'var(--gold-dk)' }}>{s.num}</div>

@@ -89,7 +89,7 @@ export default function Newsletter() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }} className="nl-grid-resp">
           {ARTICLES.map((a, i) => (
             <article key={i} className={`reveal rd${(i % 3) + 1}`}
-              style={{ background: 'var(--card)', border: '1px solid var(--border)', overflow: 'hidden', cursor: 'pointer', transition: 'border-color .3s, transform .3s, box-shadow .3s' }}
+              style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', overflow: 'hidden', cursor: 'pointer', transition: 'border-color .3s, transform .3s, box-shadow .3s' }}
               onMouseEnter={e => { const d = e.currentTarget as HTMLElement; d.style.borderColor = 'var(--gold)'; d.style.transform = 'translateY(-3px)'; d.style.boxShadow = 'var(--shadow-md)'; }}
               onMouseLeave={e => { const d = e.currentTarget as HTMLElement; d.style.borderColor = 'var(--border)'; d.style.transform = ''; d.style.boxShadow = ''; }}>
               {/* Coloured header */}
@@ -113,7 +113,7 @@ export default function Newsletter() {
         </div>
 
         {/* Subscribe Block */}
-        <div className="reveal" style={{ marginTop: 64, background: 'var(--brown-deep)', border: '1px solid var(--dark-border)', padding: '56px 64px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <div className="reveal" style={{ marginTop: 64, background: 'var(--brown-deep)', border: '1px solid var(--dark-border)', borderRadius: 'var(--radius-lg)', padding: '56px 64px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 70% at 50% 50%, rgba(243,180,51,.07), transparent 70%)' }} />
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(90deg, transparent, var(--gold), transparent)' }} />
           <div style={{ position: 'relative', zIndex: 1 }}>

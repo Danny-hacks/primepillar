@@ -57,7 +57,7 @@ export default function About() {
           <p className="lead reveal rd3">
             The Prime Pillar Group specialises in building luxury homes, providing industry-leading property valuation services, and delivering exclusive real estate advisory — serving the Mauritian market since 2011.
           </p>
-          <div className="reveal rd3" style={{ marginTop: 36, padding: '28px 32px', border: '1px solid rgba(243,180,51,.2)', background: 'rgba(243,180,51,.04)', borderLeft: '3px solid var(--gold)' }}>
+          <div className="reveal rd3" style={{ marginTop: 36, padding: '28px 32px', border: '1px solid rgba(243,180,51,.2)', borderRadius: 'var(--radius)', background: 'rgba(243,180,51,.04)', borderLeft: '3px solid var(--gold)' }}>
             <p style={{ fontFamily: 'var(--font-display)', fontSize: 19, fontStyle: 'italic', color: 'var(--brown-deep)', lineHeight: 1.6 }}>
               "One Team, One Mission: Redefine and Reshape the Real Estate Industry of Mauritius"
             </p>
@@ -76,11 +76,11 @@ export default function About() {
             { label: 'Vision', text: 'To redefine and reshape the real estate industry of Mauritius, setting the benchmark for professionalism and client service.' },
             { label: 'Standards', text: 'Guided by RICS — the Royal Institution of Chartered Surveyors — we uphold the highest international standards in property valuation and advisory.' },
           ].map((item, i) => (
-            <div key={i} className={`reveal rd${i + 1}`} style={{ padding: '40px 36px', border: '1px solid var(--dark-border)', background: 'rgba(255,255,255,.03)', transition: 'border-color .3s' }}
+            <div key={i} className={`reveal rd${i + 1}`} style={{ padding: '40px 36px', border: '1px solid var(--dark-border)', borderRadius: 'var(--radius)', background: 'rgba(255,255,255,.03)', transition: 'border-color .3s' }}
               onMouseEnter={e => (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(243,180,51,.4)'}
               onMouseLeave={e => (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--dark-border)'}>
               <div style={{ width: 40, height: 2, background: 'var(--gold)', marginBottom: 20 }} />
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 28, fontWeight: 300, color: 'var(--cream)', marginBottom: 14 }}>{item.label}</h3>
+              <h3 style={{ fontSize: 28, fontWeight: 300, color: 'var(--cream)', marginBottom: 14 }}>{item.label}</h3>
               <p style={{ fontSize: 14, fontWeight: 300, color: 'var(--text-light)', lineHeight: 1.8 }}>{item.text}</p>
             </div>
           ))}
@@ -99,10 +99,10 @@ export default function About() {
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 2 }} className="val-grid-resp">
           {VALUES.map((v, i) => (
-            <div key={v.letter} className={`reveal rd${i + 1}`} style={{ background: 'var(--card)', border: '1px solid var(--border)', padding: '40px 28px', textAlign: 'center', transition: 'border-color .3s, transform .3s, box-shadow .3s' }}
+            <div key={v.letter} className={`reveal rd${i + 1}`} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '40px 28px', textAlign: 'center', transition: 'border-color .3s, transform .3s, box-shadow .3s' }}
               onMouseEnter={e => { const d = e.currentTarget as HTMLDivElement; d.style.borderColor = 'var(--gold)'; d.style.transform = 'translateY(-4px)'; d.style.boxShadow = 'var(--shadow-md)'; }}
               onMouseLeave={e => { const d = e.currentTarget as HTMLDivElement; d.style.borderColor = 'var(--border)'; d.style.transform = ''; d.style.boxShadow = ''; }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 64, fontWeight: 300, color: 'var(--gold)', lineHeight: 1, marginBottom: 12 }}>{v.letter}</div>
+              <div style={{ fontSize: 64, fontWeight: 300, color: 'var(--gold)', lineHeight: 1, marginBottom: 12 }}>{v.letter}</div>
               <div style={{ fontSize: 11, letterSpacing: 2.5, textTransform: 'uppercase', fontWeight: 700, color: 'var(--brown-deep)', marginBottom: 10 }}>{v.name}</div>
               <div style={{ fontSize: 12, fontWeight: 300, color: 'var(--text-muted)', lineHeight: 1.65 }}>{v.desc}</div>
             </div>
@@ -118,7 +118,7 @@ export default function About() {
         <p className="lead reveal rd2" style={{ marginBottom: 48 }}>The professionals behind Prime Pillar bring decades of combined expertise and a shared commitment to excellence.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }} className="team-grid-resp">
           {TEAM.map((m, i) => (
-            <div key={i} className={`reveal rd${i + 1}`} style={{ background: 'var(--bg-warm)', border: '1px solid var(--border)', overflow: 'hidden', transition: 'border-color .3s, transform .3s' }}
+            <div key={i} className={`reveal rd${i + 1}`} style={{ background: 'var(--bg-warm)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', overflow: 'hidden', transition: 'border-color .3s, transform .3s' }}
               onMouseEnter={e => { const d = e.currentTarget as HTMLDivElement; d.style.borderColor = 'var(--gold)'; d.style.transform = 'translateY(-3px)'; }}
               onMouseLeave={e => { const d = e.currentTarget as HTMLDivElement; d.style.borderColor = 'var(--border)'; d.style.transform = ''; }}>
               {/* Photo */}
@@ -130,7 +130,7 @@ export default function About() {
                 </div>
               </div>
               <div style={{ padding: '24px 28px 28px' }}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 500, color: 'var(--brown-deep)', marginBottom: 4 }}>{m.name}</div>
+                <div style={{ fontSize: 22, fontWeight: 500, color: 'var(--brown-deep)', marginBottom: 4 }}>{m.name}</div>
                 <div style={{ fontSize: 12, color: 'var(--gold-dk)', letterSpacing: 1, marginBottom: 12 }}>{m.role}</div>
                 <p style={{ fontSize: 13, fontWeight: 300, color: 'var(--text-mid)', lineHeight: 1.7, marginBottom: 16 }}>{m.bio}</p>
                 {m.email && (
@@ -149,10 +149,10 @@ export default function About() {
       <section className="sec-sm" style={{ background: 'var(--bg-warm)', padding: '64px 60px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 2 }} className="stats-grid-resp">
           {[['13+','Years in Business'],['500+','Properties Valued'],['15+','Banking Partners'],['150+','Happy Clients']].map(([n,l], i) => (
-            <div key={l} className={`reveal rd${i + 1}`} style={{ background: 'var(--card)', border: '1px solid var(--border)', padding: '40px 32px', textAlign: 'center', transition: 'border-color .3s' }}
+            <div key={l} className={`reveal rd${i + 1}`} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '40px 32px', textAlign: 'center', transition: 'border-color .3s' }}
               onMouseEnter={e => (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--gold)'}
               onMouseLeave={e => (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--border)'}>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 52, fontWeight: 300, color: 'var(--gold-dk)', lineHeight: 1 }}>{n}</div>
+              <div style={{ fontSize: 52, fontWeight: 700, color: 'var(--gold-dk)', lineHeight: 1 }}>{n}</div>
               <div style={{ fontSize: 11, letterSpacing: 1.5, textTransform: 'uppercase', color: 'var(--text-muted)', marginTop: 10 }}>{l}</div>
             </div>
           ))}

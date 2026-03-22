@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-const PARTNERS = [
-  { name: 'SBM Bank', domain: 'sbmgroup.mu' },
-  { name: 'ABSA Bank', domain: 'absa.co.za' },
+const PARTNERS: { name: string; logo?: string; domain?: string }[] = [
+  { name: 'SBM Bank', logo: '/partners/sbm.jpg' },
+  { name: 'ABSA Bank', logo: '/partners/absa.webp' },
   { name: 'AfrAsia Bank', domain: 'afrasiabank.com' },
   { name: 'BCP Bank', domain: 'bfrancegroup.com' },
   { name: 'Bank One', domain: 'bankone.mu' },
@@ -15,26 +15,26 @@ const PARTNERS = [
   { name: 'Govt. of Mauritius', domain: 'govmu.org' },
 ];
 
-function PartnerLogo({ name, domain }: { name: string; domain: string }) {
+function PartnerLogo({ name, logo, domain }: { name: string; logo?: string; domain?: string }) {
   const [failed, setFailed] = useState(false);
-  const logoUrl = `https://logo.clearbit.com/${domain}?size=80`;
+  const src = logo || (domain ? `https://logo.clearbit.com/${domain}?size=80` : '');
 
   return (
     <div className="carousel-item">
-      {!failed ? (
+      {src && !failed ? (
         <img
-          src={logoUrl}
+          src={src}
           alt={name}
           onError={() => setFailed(true)}
           style={{
-            height: 36,
-            maxWidth: 100,
+            height: 32,
+            maxWidth: 110,
             objectFit: 'contain',
-            filter: 'grayscale(100%) opacity(0.5)',
+            filter: 'grayscale(100%) opacity(0.55)',
             transition: 'filter 0.3s',
           }}
           onMouseEnter={e => (e.currentTarget.style.filter = 'grayscale(0%) opacity(1)')}
-          onMouseLeave={e => (e.currentTarget.style.filter = 'grayscale(100%) opacity(0.5)')}
+          onMouseLeave={e => (e.currentTarget.style.filter = 'grayscale(100%) opacity(0.55)')}
         />
       ) : (
         <span className="carousel-text-logo">{name}</span>
@@ -44,7 +44,6 @@ function PartnerLogo({ name, domain }: { name: string; domain: string }) {
 }
 
 export default function PartnersCarousel({ label }: { label?: string }) {
-  // Duplicate the list for seamless infinite scroll
   const items = [...PARTNERS, ...PARTNERS];
 
   return (
@@ -55,7 +54,7 @@ export default function PartnersCarousel({ label }: { label?: string }) {
       <div className="carousel-track-wrapper">
         <div className="carousel-track">
           {items.map((p, i) => (
-            <PartnerLogo key={`${p.domain}-${i}`} name={p.name} domain={p.domain} />
+            <PartnerLogo key={`${p.name}-${i}`} name={p.name} logo={p.logo} domain={p.domain} />
           ))}
         </div>
       </div>

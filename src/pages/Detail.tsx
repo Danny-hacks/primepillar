@@ -67,7 +67,7 @@ export default function Detail() {
           <div style={{ display: 'flex', gap: 10 }}>
             <button
               onClick={() => toggleFav(p.id)}
-              style={{ padding: '11px 20px', border: '1px solid rgba(243,180,51,.4)', background: isFav ? 'var(--gold)' : 'rgba(20,10,2,.6)', color: isFav ? '#fff' : 'var(--gold)', backdropFilter: 'blur(8px)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 8, fontSize: 11, letterSpacing: 1.5, textTransform: 'uppercase', fontWeight: 600, transition: 'all .25s' }}>
+              style={{ padding: '11px 20px', border: '1px solid rgba(243,180,51,.4)', borderRadius: 'var(--radius-sm)', background: isFav ? 'var(--gold)' : 'rgba(20,10,2,.6)', color: isFav ? '#fff' : 'var(--gold)', backdropFilter: 'blur(8px)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 8, fontSize: 11, letterSpacing: 1.5, textTransform: 'uppercase', fontWeight: 600, transition: 'all .25s' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill={isFav ? '#fff' : 'none'} stroke="currentColor" strokeWidth="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
               {isFav ? 'Saved' : 'Save'}
             </button>
@@ -87,7 +87,7 @@ export default function Detail() {
           </p>
 
           {/* Specs bar */}
-          <div style={{ display: 'flex', border: '1px solid var(--border)', marginBottom: 36, background: 'var(--card)', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', border: '1px solid var(--border)', borderRadius: 'var(--radius)', marginBottom: 36, background: 'var(--card)', flexWrap: 'wrap' }}>
             {p.beds > 0 && <SpecBox n={p.beds} label="Bedrooms" />}
             {p.baths > 0 && <SpecBox n={p.baths} label="Bathrooms" />}
             {p.area > 0 && <SpecBox n={p.area} label="m² Area" />}
@@ -96,14 +96,14 @@ export default function Detail() {
           </div>
 
           {/* Description */}
-          <div style={{ background: 'var(--card)', border: '1px solid var(--border)', padding: '32px 36px', marginBottom: 24 }}>
+          <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '32px 36px', marginBottom: 24 }}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 400, color: 'var(--brown-deep)', marginBottom: 14 }}>About This Property</h2>
             <p style={{ fontSize: 14, fontWeight: 300, color: 'var(--text-mid)', lineHeight: 1.9 }}>{p.desc}</p>
           </div>
 
           {/* Amenities */}
           {p.amenities.length > 0 && (
-            <div style={{ background: 'var(--card)', border: '1px solid var(--border)', padding: '32px 36px', marginBottom: 24 }}>
+            <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '32px 36px', marginBottom: 24 }}>
               <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 400, color: 'var(--brown-deep)', marginBottom: 18 }}>Features & Amenities</h2>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12 }}>
                 {p.amenities.map(a => (
@@ -117,14 +117,14 @@ export default function Detail() {
           )}
 
           {/* Location section */}
-          <div style={{ background: 'var(--card)', border: '1px solid var(--border)', padding: '32px 36px', marginBottom: 24 }}>
+          <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '32px 36px', marginBottom: 24 }}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 400, color: 'var(--brown-deep)', marginBottom: 14 }}>Location</h2>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, color: 'var(--text-mid)', marginBottom: 16 }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               {p.location}, Mauritius
             </div>
             {/* Map placeholder */}
-            <div style={{ height: 220, background: 'linear-gradient(135deg, var(--bg-warm), var(--border))', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--border)' }}>
+            <div style={{ height: 220, background: 'linear-gradient(135deg, var(--bg-warm), var(--border))', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--border)', borderRadius: 'var(--radius-sm)' }}>
               <div style={{ textAlign: 'center', color: 'var(--text-muted)' }}>
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ margin: '0 auto 8px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 <p style={{ fontSize: 12 }}>{p.location}, Mauritius</p>
@@ -136,7 +136,7 @@ export default function Detail() {
 
         {/* Sidebar – Contact Card */}
         <div style={{ position: 'sticky', top: 'calc(var(--nav-h) + 24px)', alignSelf: 'start' }}>
-          <div style={{ background: 'var(--card)', border: '1px solid var(--border)', padding: '32px', boxShadow: 'var(--shadow-md)', marginBottom: 20 }}>
+          <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '32px', boxShadow: 'var(--shadow-md)', marginBottom: 20 }}>
             <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 400, color: 'var(--brown-deep)', marginBottom: 6 }}>Interested in This Property?</h3>
             <p style={{ fontSize: 12, color: 'var(--text-muted)', marginBottom: 24 }}>Our advisor will respond within 24 hours.</p>
 
@@ -163,7 +163,7 @@ export default function Detail() {
             </div>
 
             <a href="tel:+2304675001"
-              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, border: '1px solid var(--border)', padding: 13, color: 'var(--brown-deep)', fontSize: 13, textDecoration: 'none', transition: 'all .25s', background: 'transparent', cursor: 'pointer' }}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, border: '1px solid var(--border)', borderRadius: 'var(--radius-sm)', padding: 13, color: 'var(--brown-deep)', fontSize: 13, textDecoration: 'none', transition: 'all .25s', background: 'transparent', cursor: 'pointer' }}
               onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--gold)'; (e.currentTarget as HTMLAnchorElement).style.color = 'var(--gold-dk)'; }}
               onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--border)'; (e.currentTarget as HTMLAnchorElement).style.color = 'var(--brown-deep)'; }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
@@ -172,9 +172,9 @@ export default function Detail() {
           </div>
 
           {/* Agent card */}
-          <div style={{ background: 'var(--brown-deep)', border: '1px solid var(--dark-border)', padding: '24px 28px' }}>
+          <div style={{ background: 'var(--brown-deep)', border: '1px solid var(--dark-border)', borderRadius: 'var(--radius)', padding: '24px 28px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14 }}>
-              <div style={{ width: 48, height: 48, border: '1.5px solid var(--gold)', background: 'rgba(243,180,51,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--gold)' }}>KM</div>
+              <div style={{ width: 48, height: 48, borderRadius: '50%', border: '1.5px solid var(--gold)', background: 'rgba(243,180,51,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--gold)' }}>KM</div>
               <div>
                 <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--cream)' }}>Kentish Moorghen</div>
                 <div style={{ fontSize: 11, color: 'var(--gold)', letterSpacing: 1 }}>FRICS, MCABE · CEO</div>

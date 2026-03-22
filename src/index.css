@@ -37,8 +37,11 @@
   --nav-h: 80px;
 
   /* Typography */
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-display: 'Poppins', system-ui, -apple-system, sans-serif;
   --font-body:    'Poppins', system-ui, -apple-system, sans-serif;
+  --radius:       8px;
+  --radius-sm:    6px;
+  --radius-lg:    12px;
 
   /* Shadows */
   --shadow-sm:   0 2px 8px rgba(60,36,20,.06);
@@ -103,7 +106,7 @@ input, select, textarea { font-family: var(--font-body); }
   border: none;
   cursor: pointer;
   transition: all 0.25s ease;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 .btn svg { width: 14px; flex-shrink: 0; }
 .btn-gold {
@@ -174,7 +177,7 @@ input, select, textarea { font-family: var(--font-body); }
   opacity: 0;
   transition: all 0.4s ease;
   max-width: 360px;
-  border-radius: 2px;
+  border-radius: var(--radius);
 }
 .toast.show { transform: translateY(0); opacity: 1; }
 .toast svg { width: 18px; color: var(--gold); flex-shrink: 0; }
@@ -214,12 +217,12 @@ input, select, textarea { font-family: var(--font-body); }
 .sec-sm { padding: 64px 60px; }
 .sec-title {
   font-family: var(--font-display);
-  font-size: clamp(32px, 4vw, 50px);
-  font-weight: 500;
-  line-height: 1.15;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 600;
+  line-height: 1.2;
   color: var(--brown-deep);
 }
-.sec-title em { font-style: italic; color: var(--gold-dk); }
+.sec-title em { font-style: normal; color: var(--gold-dk); font-weight: 600; }
 .sec-title.light { color: var(--cream); }
 .sec-title.light em { color: var(--gold); }
 .lead {
@@ -242,7 +245,7 @@ input, select, textarea { font-family: var(--font-body); }
   cursor: pointer;
   transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
   position: relative;
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 .prop-card:hover {
   border-color: var(--gold);
@@ -266,7 +269,7 @@ input, select, textarea { font-family: var(--font-body); }
   text-transform: uppercase;
   font-weight: 600;
   padding: 5px 12px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 .tag-sale { background: var(--gold); color: var(--brown-deep); }
 .tag-rent { background: var(--brown); color: var(--cream); }
@@ -339,7 +342,7 @@ input, select, textarea { font-family: var(--font-body); }
   justify-content: space-between;
   margin: 12px -22px -22px;
   background: var(--card-warm);
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 var(--radius) var(--radius);
 }
 .prop-ref { font-size: 10px; color: var(--text-muted); letter-spacing: 1px; }
 .prop-view {
@@ -531,7 +534,7 @@ input, select, textarea { font-family: var(--font-body); }
   color: rgba(200,184,152,0.45);
   border: 1px solid var(--dark-border);
   padding: 4px 10px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 /* ── FORM FIELDS ── */
@@ -556,7 +559,7 @@ input, select, textarea { font-family: var(--font-body); }
   outline: none;
   transition: border-color 0.25s;
   -webkit-appearance: none;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 .field-input:focus, .field-select:focus, .field-textarea:focus {
   border-color: var(--gold);

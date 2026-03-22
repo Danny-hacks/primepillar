@@ -49,7 +49,7 @@ export default function Contact() {
             { label: 'Office Hours', val: 'Mon – Fri: 8:30 AM – 5:00 PM\nSaturday: 9:00 AM – 1:00 PM', icon: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z', icon2: 'M12 6v6l4 2' },
           ].map((item, i) => (
             <div key={i} className={`reveal rd${i + 1}`} style={{ display: 'flex', gap: 18, marginBottom: 28, alignItems: 'flex-start' }}>
-              <div style={{ width: 44, height: 44, border: '1px solid rgba(243,180,51,.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, background: 'rgba(243,180,51,.04)' }}>
+              <div style={{ width: 44, height: 44, borderRadius: 'var(--radius-sm)', border: '1px solid rgba(243,180,51,.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, background: 'rgba(243,180,51,.04)' }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5">
                   <path d={item.icon}/>{item.icon2 && <path d={item.icon2}/>}
                 </svg>
@@ -62,7 +62,7 @@ export default function Contact() {
           ))}
 
           {/* Map placeholder */}
-          <div className="reveal" style={{ marginTop: 32, height: 200, background: 'linear-gradient(135deg, var(--bg-warm), var(--border))', border: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+          <div className="reveal" style={{ marginTop: 32, height: 200, background: 'linear-gradient(135deg, var(--bg-warm), var(--border))', border: '1px solid var(--border)', borderRadius: 'var(--radius)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
             onClick={() => window.open('https://www.google.com/maps/search/61+Avenue+Des+Goyaviers,+Sodnac,+Quatre+Bornes,+Mauritius', '_blank')}>
             <div style={{ textAlign: 'center', color: 'var(--text-muted)' }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ margin: '0 auto 8px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -131,7 +131,7 @@ export default function Contact() {
           ].map((item, i) => {
             const { goto } = useApp();
             return (
-              <div key={i} style={{ background: 'var(--card)', border: '1px solid var(--border)', padding: '32px 28px', textAlign: 'center', cursor: 'pointer', transition: 'border-color .3s, transform .3s' }}
+              <div key={i} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '32px 28px', textAlign: 'center', cursor: 'pointer', transition: 'border-color .3s, transform .3s' }}
                 onClick={() => goto(item.page)}
                 onMouseEnter={e => { const d = e.currentTarget as HTMLDivElement; d.style.borderColor = 'var(--gold)'; d.style.transform = 'translateY(-2px)'; }}
                 onMouseLeave={e => { const d = e.currentTarget as HTMLDivElement; d.style.borderColor = 'var(--border)'; d.style.transform = ''; }}>
