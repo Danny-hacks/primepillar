@@ -1,5 +1,6 @@
 import { useApp } from '@/AppContext';
 import { useReveal } from '@/hooks/useReveal';
+import PartnersCarousel from '@/components/PartnersCarousel';
 
 const VALUES = [
   { letter: 'P', name: 'People',     desc: 'We believe in our people and know that success is achieved as a team.' },
@@ -37,11 +38,6 @@ const TEAM = [
   },
 ];
 
-const PARTNERS = [
-  'SBM Bank (Mauritius) Ltd','ABSA Bank (Mauritius) Ltd','AfrAsia Bank Ltd','BCP Bank (Mauritius) Ltd','Bank One Ltd',
-  'MauBank Ltd','Bank of Baroda','SBI Bank (Mauritius) Ltd','Mutual Aid Association Ltd','ABC Banking Corporation Ltd',
-  'Investec Bank (Mauritius) Ltd','Government of Mauritius','HYVEC Partners','Swan Group','The Mauritius Civil Service',
-];
 
 export default function About() {
   const { goto } = useApp();
@@ -164,24 +160,20 @@ export default function About() {
       </section>
 
       {/* ── PARTNERS ── */}
-      <div className="partners-strip">
-        <p className="partners-label reveal">Our Trusted Partners &amp; Clients</p>
-        <div className="partners-grid reveal rd1">
-          {PARTNERS.map(name => (
-            <div key={name} className="partner-item"><span>{name}</span></div>
-          ))}
-        </div>
-      </div>
+      <PartnersCarousel label="Our Trusted Partners & Clients" />
 
       {/* ── CTA ── */}
-      <section style={{ background: 'var(--card)', padding: '80px 60px', textAlign: 'center', borderTop: '1px solid var(--border)' }}>
-        <span className="eyebrow reveal">Work With Us</span>
-        <h2 className="sec-title reveal rd1" style={{ marginBottom: 14 }}>Ready to Get <em>Started?</em></h2>
-        <div className="gold-rule center reveal rd2" />
-        <p className="lead reveal rd2" style={{ margin: '0 auto 36px' }}>Whether you need a valuation, want to buy or rent, or are looking to develop — our team is ready to help.</p>
-        <div className="reveal rd3" style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <button className="btn btn-gold" onClick={() => goto('contact')}>Contact the Team</button>
-          <button className="btn btn-outline" onClick={() => goto('services')}>Our Services</button>
+      <section className="cta-image-section">
+        <div className="cta-image-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80)' }} />
+        <div className="cta-image-content">
+          <span className="eyebrow reveal" style={{ color: 'var(--gold)' }}>Work With Us</span>
+          <h2 className="sec-title light reveal rd1" style={{ margin: '0 auto 14px' }}>Ready to Get <em>Started?</em></h2>
+          <div className="gold-rule center reveal rd2" />
+          <p className="reveal rd2" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-light)', maxWidth: 440, margin: '0 auto 36px', lineHeight: 1.8 }}>Whether you need a valuation, want to buy or rent, or are looking to develop — our team is ready to help.</p>
+          <div className="reveal rd3" style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button className="btn btn-gold" onClick={() => goto('contact')}>Contact the Team</button>
+            <button className="btn btn-outline-gold" onClick={() => goto('services')}>Our Services</button>
+          </div>
         </div>
       </section>
 

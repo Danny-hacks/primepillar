@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '@/AppContext';
 import PropertyCard from '@/components/PropertyCard';
+import PartnersCarousel from '@/components/PartnersCarousel';
 import { useReveal } from '@/hooks/useReveal';
 import { PROPERTIES, LOCATIONS } from '@/data/properties';
 
@@ -129,10 +130,10 @@ export default function Home() {
         </div>
 
         {/* Stats strip */}
-        <div style={{ position: 'relative', zIndex: 2, display: 'flex', marginTop: 28, border: '1px solid rgba(243,180,51,.2)', background: 'rgba(20,10,2,.5)', backdropFilter: 'blur(12px)', animation: 'fadeUp .8s 1s both' }}>
+        <div className="hero-stats-strip" style={{ position: 'relative', zIndex: 2, display: 'flex', flexWrap: 'wrap', marginTop: 28, border: '1px solid rgba(243,180,51,.2)', background: 'rgba(20,10,2,.5)', backdropFilter: 'blur(12px)', animation: 'fadeUp .8s 1s both' }}>
           {[['13+','Years Active'],['500+','Properties Valued'],['15+','Bank Partners'],['150+','Happy Clients']].map(([n,l]) => (
-            <div key={l} style={{ padding: '18px 36px', textAlign: 'center', borderRight: '1px solid rgba(243,180,51,.15)' }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 30, fontWeight: 400, color: 'var(--gold)', lineHeight: 1 }}>{n}</div>
+            <div key={l} style={{ padding: '16px 28px', textAlign: 'center', borderRight: '1px solid rgba(243,180,51,.15)', flex: '1 1 auto', minWidth: 120 }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: 28, fontWeight: 500, color: 'var(--gold)', lineHeight: 1 }}>{n}</div>
               <div style={{ fontSize: 9, letterSpacing: 2, textTransform: 'uppercase', color: 'var(--text-light)', marginTop: 5 }}>{l}</div>
             </div>
           ))}
@@ -206,14 +207,7 @@ export default function Home() {
       </section>
 
       {/* ── PARTNERS ── */}
-      <div className="partners-strip">
-        <p className="partners-label reveal">Trusted by leading financial institutions across Mauritius</p>
-        <div className="partners-grid reveal rd1">
-          {['SBM Bank','ABSA Bank','AfrAsia Bank','BCP Bank','Bank One','MauBank','Bank of Baroda','Investec Bank','Swan Group','Govt. of Mauritius'].map(name => (
-            <div key={name} className="partner-item"><span>{name}</span></div>
-          ))}
-        </div>
-      </div>
+      <PartnersCarousel />
 
       {/* ── TESTIMONIALS ── */}
       <section className="sec" style={{ background: 'var(--brown-deep)', position: 'relative', overflow: 'hidden' }}>
@@ -306,25 +300,21 @@ export default function Home() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ position: 'relative', padding: '120px 60px', textAlign: 'center', overflow: 'hidden', background: 'linear-gradient(135deg, var(--brown-deep) 0%, #140E04 50%, #1A1204 100%)' }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(243,180,51,.08), transparent 70%)' }} />
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(90deg, transparent, var(--gold), transparent)' }} />
-        <span className="eyebrow reveal" style={{ position: 'relative', zIndex: 1 }}>Take the Next Step</span>
-        <h2 className="reveal rd1" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 300, lineHeight: 1.1, color: 'var(--cream)', maxWidth: 660, margin: '12px auto 18px', position: 'relative', zIndex: 1 }}>
-          Ready to Find Your<br /><em style={{ color: 'var(--gold)' }}>Perfect Property?</em>
-        </h2>
-        <p className="reveal rd2" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-light)', maxWidth: 440, margin: '0 auto 44px', lineHeight: 1.8, position: 'relative', zIndex: 1 }}>
-          Speak with one of our expert advisors. Whether buying, selling, renting, or investing — Prime Pillar is ready to guide you.
-        </p>
-        <div className="reveal rd3" style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', position: 'relative', zIndex: 1 }}>
-          <button className="btn btn-gold" onClick={() => goto('contact')}>
-            Schedule a Consultation
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-          <button className="btn btn-white" onClick={() => goto('properties')}>
-            Browse All Properties
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
+      <section className="cta-image-section">
+        <div className="cta-image-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80)' }} />
+        <div className="cta-image-content">
+          <span className="eyebrow reveal" style={{ color: 'var(--gold)' }}>Take the Next Step</span>
+          <h2 className="sec-title light reveal rd1" style={{ fontSize: 'clamp(32px, 5vw, 56px)', margin: '0 auto 18px' }}>
+            Ready to Find Your<br /><em>Perfect Property?</em>
+          </h2>
+          <div className="gold-rule center reveal rd2" />
+          <p className="reveal rd2" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-light)', maxWidth: 440, margin: '0 auto 40px', lineHeight: 1.8 }}>
+            Speak with one of our expert advisors. Whether buying, selling, renting, or investing — Prime Pillar is ready to guide you.
+          </p>
+          <div className="reveal rd3" style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button className="btn btn-gold" onClick={() => goto('contact')}>Schedule a Consultation</button>
+            <button className="btn btn-white" onClick={() => goto('properties')}>Browse All Properties</button>
+          </div>
         </div>
       </section>
 

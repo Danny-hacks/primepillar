@@ -113,24 +113,21 @@ export default function Services() {
       })}
 
       {/* CTA */}
-      <section style={{ position: 'relative', padding: '100px 60px', textAlign: 'center', background: 'var(--brown-deep)', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(243,180,51,.07), transparent 70%)' }} />
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(90deg, transparent, var(--gold), transparent)' }} />
-        <span className="eyebrow reveal" style={{ position: 'relative', zIndex: 1 }}>Get Started</span>
-        <h2 className="reveal rd1" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(30px,4vw,52px)', fontWeight: 300, color: 'var(--cream)', maxWidth: 600, margin: '12px auto 18px', position: 'relative', zIndex: 1 }}>
-          Ready to Work with <em style={{ color: 'var(--gold)' }}>Prime Pillar?</em>
-        </h2>
-        <p className="reveal rd2" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-light)', maxWidth: 420, margin: '0 auto 40px', lineHeight: 1.8, position: 'relative', zIndex: 1 }}>
-          Contact our team today to discuss how we can help you achieve your real estate goals.
-        </p>
-        <div className="reveal rd3" style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', position: 'relative', zIndex: 1 }}>
-          <button className="btn btn-gold" onClick={() => goto('contact')}>
-            Contact Us Today
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-          <button className="btn btn-white" onClick={() => goto('properties')}>
-            Browse Properties
-          </button>
+      <section className="cta-image-section">
+        <div className="cta-image-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=80)' }} />
+        <div className="cta-image-content">
+          <span className="eyebrow reveal" style={{ color: 'var(--gold)' }}>Get Started</span>
+          <h2 className="sec-title light reveal rd1" style={{ margin: '0 auto 18px' }}>
+            Ready to Work with <em>Prime Pillar?</em>
+          </h2>
+          <div className="gold-rule center reveal rd2" />
+          <p className="reveal rd2" style={{ fontSize: 15, fontWeight: 300, color: 'var(--text-light)', maxWidth: 420, margin: '0 auto 40px', lineHeight: 1.8 }}>
+            Contact our team today to discuss how we can help you achieve your real estate goals.
+          </p>
+          <div className="reveal rd3" style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button className="btn btn-gold" onClick={() => goto('contact')}>Contact Us Today</button>
+            <button className="btn btn-white" onClick={() => goto('properties')}>Browse Properties</button>
+          </div>
         </div>
       </section>
 
