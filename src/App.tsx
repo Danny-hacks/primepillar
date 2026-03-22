@@ -1,4 +1,3 @@
-import React from 'react';
 import { useApp } from '@/AppContext';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
@@ -27,9 +26,6 @@ function PageContent() {
 }
 
 export default function App() {
-  const { nav } = useApp();
-  const showFooter = nav.page !== 'home' || true; // always show footer
-
   return (
     <>
       <Nav />

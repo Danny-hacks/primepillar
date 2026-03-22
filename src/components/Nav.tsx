@@ -166,7 +166,7 @@ export default function Nav() {
             <button
               key={item.label}
               onClick={() => navigate(item.page, 'opts' in item ? item.opts : undefined)}
-              style={{ display: 'block', padding: '16px 0', borderBottom: '1px solid var(--dark-border)', fontSize: 16, letterSpacing: 1, textTransform: 'uppercase', color: 'var(--cream)', fontWeight: 300, background: 'none', border: 'none', borderBottom: '1px solid var(--dark-border)', cursor: 'pointer', textAlign: 'left' }}
+              style={{ display: 'block', padding: '16px 0', fontSize: 16, letterSpacing: 1, textTransform: 'uppercase', color: 'var(--cream)', fontWeight: 300, background: 'none', border: 'none', borderBottom: '1px solid var(--dark-border)', cursor: 'pointer', textAlign: 'left' }}
             >
               {item.label}
             </button>

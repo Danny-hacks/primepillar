@@ -1,4 +1,3 @@
-import React from 'react';
 import { useApp } from '@/AppContext';
 
 export default function Toast() {

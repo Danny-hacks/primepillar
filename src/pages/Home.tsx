@@ -22,7 +22,7 @@ const TESTIMONIALS = [
 ];
 
 export default function Home() {
-  const { goto, showDetail } = useApp();
+  const { goto } = useApp();
   const ref = useReveal();
 
   const [searchMode, setSearchMode] = useState<'buy' | 'rent' | 'valuation'>('buy');

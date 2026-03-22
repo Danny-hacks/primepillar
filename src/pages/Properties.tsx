@@ -7,7 +7,7 @@ import { FilterState } from '@/types';
 const PER_PAGE = 9;
 
 export default function Properties() {
-  const { nav, goto } = useApp();
+  const { nav } = useApp();
 
   const [filters, setFilters] = useState<FilterState>({
     status: nav.filterStatus || '',
