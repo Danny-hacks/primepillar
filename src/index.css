@@ -406,9 +406,9 @@ input, select, textarea { font-family: var(--font-body); }
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 120px;
-  height: 56px;
-  padding: 8px 16px;
+  min-width: 140px;
+  height: 72px;
+  padding: 8px 20px;
 }
 .carousel-text-logo {
   font-family: var(--font-body);
