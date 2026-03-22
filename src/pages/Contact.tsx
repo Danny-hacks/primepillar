@@ -32,7 +32,7 @@ export default function Contact() {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 640 }} className="contact-grid-resp">
 
         {/* Info Side */}
-        <div style={{ padding: '80px', background: 'linear-gradient(135deg, rgba(200,147,12,.04) 0%, transparent 60%)' }} className="contact-info-resp">
+        <div style={{ padding: '80px', background: 'linear-gradient(135deg, rgba(243,180,51,.04) 0%, transparent 60%)' }} className="contact-info-resp">
           <span className="eyebrow reveal">We're Here to Help</span>
           <h2 className="sec-title reveal rd1" style={{ fontSize: 'clamp(26px,3vw,36px)', marginBottom: 14 }}>
             Let's Start a <em>Conversation</em>
@@ -49,7 +49,7 @@ export default function Contact() {
             { label: 'Office Hours', val: 'Mon – Fri: 8:30 AM – 5:00 PM\nSaturday: 9:00 AM – 1:00 PM', icon: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z', icon2: 'M12 6v6l4 2' },
           ].map((item, i) => (
             <div key={i} className={`reveal rd${i + 1}`} style={{ display: 'flex', gap: 18, marginBottom: 28, alignItems: 'flex-start' }}>
-              <div style={{ width: 44, height: 44, border: '1px solid rgba(200,147,12,.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, background: 'rgba(200,147,12,.04)' }}>
+              <div style={{ width: 44, height: 44, border: '1px solid rgba(243,180,51,.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, background: 'rgba(243,180,51,.04)' }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5">
                   <path d={item.icon}/>{item.icon2 && <path d={item.icon2}/>}
                 </svg>

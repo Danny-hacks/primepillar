@@ -114,7 +114,7 @@ export default function Services() {
 
       {/* CTA */}
       <section style={{ position: 'relative', padding: '100px 60px', textAlign: 'center', background: 'var(--brown-deep)', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,147,12,.07), transparent 70%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(243,180,51,.07), transparent 70%)' }} />
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(90deg, transparent, var(--gold), transparent)' }} />
         <span className="eyebrow reveal" style={{ position: 'relative', zIndex: 1 }}>Get Started</span>
         <h2 className="reveal rd1" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(30px,4vw,52px)', fontWeight: 300, color: 'var(--cream)', maxWidth: 600, margin: '12px auto 18px', position: 'relative', zIndex: 1 }}>

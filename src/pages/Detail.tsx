@@ -67,7 +67,7 @@ export default function Detail() {
           <div style={{ display: 'flex', gap: 10 }}>
             <button
               onClick={() => toggleFav(p.id)}
-              style={{ padding: '11px 20px', border: '1px solid rgba(200,147,12,.4)', background: isFav ? 'var(--gold)' : 'rgba(20,10,2,.6)', color: isFav ? '#fff' : 'var(--gold)', backdropFilter: 'blur(8px)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 8, fontSize: 11, letterSpacing: 1.5, textTransform: 'uppercase', fontWeight: 600, transition: 'all .25s' }}>
+              style={{ padding: '11px 20px', border: '1px solid rgba(243,180,51,.4)', background: isFav ? 'var(--gold)' : 'rgba(20,10,2,.6)', color: isFav ? '#fff' : 'var(--gold)', backdropFilter: 'blur(8px)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 8, fontSize: 11, letterSpacing: 1.5, textTransform: 'uppercase', fontWeight: 600, transition: 'all .25s' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill={isFav ? '#fff' : 'none'} stroke="currentColor" strokeWidth="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
               {isFav ? 'Saved' : 'Save'}
             </button>
@@ -174,7 +174,7 @@ export default function Detail() {
           {/* Agent card */}
           <div style={{ background: 'var(--brown-deep)', border: '1px solid var(--dark-border)', padding: '24px 28px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14 }}>
-              <div style={{ width: 48, height: 48, border: '1.5px solid var(--gold)', background: 'rgba(200,147,12,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--gold)' }}>KM</div>
+              <div style={{ width: 48, height: 48, border: '1.5px solid var(--gold)', background: 'rgba(243,180,51,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--gold)' }}>KM</div>
               <div>
                 <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--cream)' }}>Kentish Moorghen</div>
                 <div style={{ fontSize: 11, color: 'var(--gold)', letterSpacing: 1 }}>FRICS, MCABE · CEO</div>

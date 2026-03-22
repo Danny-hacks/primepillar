@@ -51,7 +51,7 @@ export default function About() {
     <div ref={ref} style={{ background: 'var(--bg)' }}>
       {/* ── HERO INTRO ── */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', marginTop: 'var(--nav-h)' }} className="about-intro-resp">
-        <div style={{ padding: '100px 80px', background: 'linear-gradient(135deg, rgba(200,147,12,.04) 0%, transparent 50%)' }} className="about-text-resp">
+        <div style={{ padding: '100px 80px', background: 'linear-gradient(135deg, rgba(243,180,51,.04) 0%, transparent 50%)' }} className="about-text-resp">
           <span className="eyebrow reveal">Est. 2011</span>
           <h1 className="sec-title reveal rd1">Who <em>We Are</em></h1>
           <div className="gold-rule reveal rd2" />
@@ -61,7 +61,7 @@ export default function About() {
           <p className="lead reveal rd3">
             The Prime Pillar Group specialises in building luxury homes, providing industry-leading property valuation services, and delivering exclusive real estate advisory — serving the Mauritian market since 2011.
           </p>
-          <div className="reveal rd3" style={{ marginTop: 36, padding: '28px 32px', border: '1px solid rgba(200,147,12,.2)', background: 'rgba(200,147,12,.04)', borderLeft: '3px solid var(--gold)' }}>
+          <div className="reveal rd3" style={{ marginTop: 36, padding: '28px 32px', border: '1px solid rgba(243,180,51,.2)', background: 'rgba(243,180,51,.04)', borderLeft: '3px solid var(--gold)' }}>
             <p style={{ fontFamily: 'var(--font-display)', fontSize: 19, fontStyle: 'italic', color: 'var(--brown-deep)', lineHeight: 1.6 }}>
               "One Team, One Mission: Redefine and Reshape the Real Estate Industry of Mauritius"
             </p>
@@ -81,7 +81,7 @@ export default function About() {
             { label: 'Standards', text: 'Guided by RICS — the Royal Institution of Chartered Surveyors — we uphold the highest international standards in property valuation and advisory.' },
           ].map((item, i) => (
             <div key={i} className={`reveal rd${i + 1}`} style={{ padding: '40px 36px', border: '1px solid var(--dark-border)', background: 'rgba(255,255,255,.03)', transition: 'border-color .3s' }}
-              onMouseEnter={e => (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(200,147,12,.4)'}
+              onMouseEnter={e => (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(243,180,51,.4)'}
               onMouseLeave={e => (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--dark-border)'}>
               <div style={{ width: 40, height: 2, background: 'var(--gold)', marginBottom: 20 }} />
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 28, fontWeight: 300, color: 'var(--cream)', marginBottom: 14 }}>{item.label}</h3>

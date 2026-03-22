@@ -44,19 +44,9 @@ export default function Nav() {
         {/* Logo */}
         <button
           onClick={() => navigate('home')}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 10 }}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
         >
-          {/* Pillar SVG mark */}
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="4" y="4" width="24" height="2.5" fill="#C8930C"/>
-            <rect x="4" y="25.5" width="24" height="2.5" fill="#C8930C"/>
-            <rect x="6" y="8" width="4" height="17" fill="#C8930C"/>
-            <rect x="22" y="8" width="4" height="17" fill="#C8930C"/>
-            <rect x="12" y="8" width="8" height="2.5" fill="#C8930C"/>
-          </svg>
-          <span style={{ fontFamily: 'var(--font-display)', fontSize: 20, fontWeight: 600, letterSpacing: 3, textTransform: 'uppercase', color: 'var(--cream)' }}>
-            PRIME<span style={{ color: 'var(--gold)' }}>PILLAR</span>
-          </span>
+          <img src="/logo-light.svg" alt="Prime Pillar" style={{ height: 32 }} />
         </button>
 
         {/* Desktop Links */}

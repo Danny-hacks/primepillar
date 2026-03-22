@@ -94,7 +94,7 @@ export default function Newsletter() {
               onMouseLeave={e => { const d = e.currentTarget as HTMLElement; d.style.borderColor = 'var(--border)'; d.style.transform = ''; d.style.boxShadow = ''; }}>
               {/* Coloured header */}
               <div style={{ height: 160, background: `linear-gradient(135deg, ${a.color}, #0a0a0a)`, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', padding: 20 }}>
-                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="rgba(200,147,12,.35)" strokeWidth="1">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="rgba(243,180,51,.35)" strokeWidth="1">
                   <path d={a.icon}/>
                 </svg>
                 <div style={{ position: 'absolute', top: 14, left: 14, fontSize: 9, letterSpacing: 2, textTransform: 'uppercase', color: 'var(--gold)', background: 'rgba(20,10,2,.7)', padding: '5px 10px' }}>{a.date}</div>
@@ -114,7 +114,7 @@ export default function Newsletter() {
 
         {/* Subscribe Block */}
         <div className="reveal" style={{ marginTop: 64, background: 'var(--brown-deep)', border: '1px solid var(--dark-border)', padding: '56px 64px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-          <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 70% at 50% 50%, rgba(200,147,12,.07), transparent 70%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 70% at 50% 50%, rgba(243,180,51,.07), transparent 70%)' }} />
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(90deg, transparent, var(--gold), transparent)' }} />
           <div style={{ position: 'relative', zIndex: 1 }}>
             <span className="eyebrow">Stay Informed</span>
@@ -131,7 +131,7 @@ export default function Newsletter() {
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 required
-                style={{ flex: 1, background: 'rgba(250,250,247,.07)', border: '1px solid rgba(200,147,12,.3)', borderRight: 0, color: 'var(--cream)', fontFamily: 'var(--font-body)', fontSize: 13, padding: '14px 18px', outline: 'none', transition: 'border-color .25s' }}
+                style={{ flex: 1, background: 'rgba(250,250,247,.07)', border: '1px solid rgba(243,180,51,.3)', borderRight: 0, color: 'var(--cream)', fontFamily: 'var(--font-body)', fontSize: 13, padding: '14px 18px', outline: 'none', transition: 'border-color .25s' }}
               />
               <button type="submit" className="btn btn-gold" style={{ padding: '14px 28px', flexShrink: 0 }}>
                 Subscribe

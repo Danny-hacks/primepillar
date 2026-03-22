@@ -55,11 +55,11 @@ export default function Home() {
       <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', paddingTop: 'var(--nav-h)' }}>
         {/* Background */}
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(20,10,2,.65) 0%, rgba(20,10,2,.3) 40%, rgba(20,10,2,.9) 100%), url(https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=80) center/cover no-repeat' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 50% at 60% 40%, rgba(200,147,12,0.08), transparent 70%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 50% at 60% 40%, rgba(243,180,51,0.08), transparent 70%)' }} />
 
         {/* Content */}
         <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', padding: '0 24px', maxWidth: 960, animation: 'fadeUp .8s .2s both' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, border: '1px solid rgba(200,147,12,0.35)', padding: '8px 22px', fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', fontWeight: 500, color: 'var(--gold)', marginBottom: 28 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, border: '1px solid rgba(243,180,51,0.35)', padding: '8px 22px', fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', fontWeight: 500, color: 'var(--gold)', marginBottom: 28 }}>
             <span style={{ width: 5, height: 5, background: 'var(--gold)', borderRadius: '50%', display: 'inline-block' }}/>
             Mauritius Real Estate · Est. 2011 · FRICS Certified
           </div>
@@ -129,9 +129,9 @@ export default function Home() {
         </div>
 
         {/* Stats strip */}
-        <div style={{ position: 'relative', zIndex: 2, display: 'flex', marginTop: 28, border: '1px solid rgba(200,147,12,.2)', background: 'rgba(20,10,2,.5)', backdropFilter: 'blur(12px)', animation: 'fadeUp .8s 1s both' }}>
+        <div style={{ position: 'relative', zIndex: 2, display: 'flex', marginTop: 28, border: '1px solid rgba(243,180,51,.2)', background: 'rgba(20,10,2,.5)', backdropFilter: 'blur(12px)', animation: 'fadeUp .8s 1s both' }}>
           {[['13+','Years Active'],['500+','Properties Valued'],['15+','Bank Partners'],['150+','Happy Clients']].map(([n,l]) => (
-            <div key={l} style={{ padding: '18px 36px', textAlign: 'center', borderRight: '1px solid rgba(200,147,12,.15)' }}>
+            <div key={l} style={{ padding: '18px 36px', textAlign: 'center', borderRight: '1px solid rgba(243,180,51,.15)' }}>
               <div style={{ fontFamily: 'var(--font-display)', fontSize: 30, fontWeight: 400, color: 'var(--gold)', lineHeight: 1 }}>{n}</div>
               <div style={{ fontSize: 9, letterSpacing: 2, textTransform: 'uppercase', color: 'var(--text-light)', marginTop: 5 }}>{l}</div>
             </div>
@@ -190,7 +190,7 @@ export default function Home() {
               onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--gold)'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-3px)'; (e.currentTarget as HTMLDivElement).style.boxShadow = 'var(--shadow-md)'; }}
               onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--border)'; (e.currentTarget as HTMLDivElement).style.transform = ''; (e.currentTarget as HTMLDivElement).style.boxShadow = ''; }}
             >
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: 60, fontWeight: 300, color: 'rgba(200,147,12,.1)', position: 'absolute', top: 12, right: 18, lineHeight: 1 }}>{s.num}</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: 60, fontWeight: 300, color: 'rgba(243,180,51,.1)', position: 'absolute', top: 12, right: 18, lineHeight: 1 }}>{s.num}</span>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.2" style={{ marginBottom: 22 }}>
                 <path d={s.icon}/>{s.num === '03' && <><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></>}{s.num === '04' && <polyline points="22 4 12 14.01 9 11.01"/>}
               </svg>
@@ -217,7 +217,7 @@ export default function Home() {
 
       {/* ── TESTIMONIALS ── */}
       <section className="sec" style={{ background: 'var(--brown-deep)', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: -120, left: -40, fontFamily: 'var(--font-display)', fontSize: 700, fontWeight: 600, color: 'rgba(200,147,12,.03)', lineHeight: 1, userSelect: 'none', pointerEvents: 'none' }}>"</div>
+        <div style={{ position: 'absolute', top: -120, left: -40, fontFamily: 'var(--font-display)', fontSize: 700, fontWeight: 600, color: 'rgba(243,180,51,.03)', lineHeight: 1, userSelect: 'none', pointerEvents: 'none' }}>"</div>
         <div className="text-center">
           <span className="eyebrow reveal">Client Stories</span>
           <h2 className="sec-title light reveal rd1">What Our Clients <em>Say</em></h2>
@@ -226,7 +226,7 @@ export default function Home() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 48 }} className="testi-grid-resp">
           {TESTIMONIALS.map((t, i) => (
             <div key={i} className={`reveal rd${i + 1}`} style={{ background: 'rgba(255,255,255,.04)', border: '1px solid rgba(74,48,20,.5)', padding: '38px 32px', transition: 'border-color .3s, transform .3s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(200,147,12,.4)'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-3px)'; }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(243,180,51,.4)'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-3px)'; }}
               onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(74,48,20,.5)'; (e.currentTarget as HTMLDivElement).style.transform = ''; }}>
               <div style={{ display: 'flex', gap: 3, marginBottom: 20 }}>
                 {[...Array(5)].map((_, j) => <svg key={j} width="13" height="13" viewBox="0 0 24 24" fill="var(--gold)" stroke="var(--gold)" strokeWidth="0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>)}
@@ -246,7 +246,7 @@ export default function Home() {
 
       {/* ── WHY CHOOSE US ── */}
       <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', background: 'var(--bg-warm)', padding: 0 }} className="why-grid-resp">
-        <div style={{ padding: '100px 80px', background: 'linear-gradient(135deg, rgba(200,147,12,.05) 0%, transparent 60%)' }} className="why-left-resp">
+        <div style={{ padding: '100px 80px', background: 'linear-gradient(135deg, rgba(243,180,51,.05) 0%, transparent 60%)' }} className="why-left-resp">
           <span className="eyebrow reveal">Why Prime Pillar</span>
           <h2 className="sec-title reveal rd1">The Standard of<br /><em>Excellence</em> Since 2011</h2>
           <div className="gold-rule reveal rd2" />
@@ -307,7 +307,7 @@ export default function Home() {
 
       {/* ── CTA ── */}
       <section style={{ position: 'relative', padding: '120px 60px', textAlign: 'center', overflow: 'hidden', background: 'linear-gradient(135deg, var(--brown-deep) 0%, #140E04 50%, #1A1204 100%)' }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,147,12,.08), transparent 70%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(243,180,51,.08), transparent 70%)' }} />
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(90deg, transparent, var(--gold), transparent)' }} />
         <span className="eyebrow reveal" style={{ position: 'relative', zIndex: 1 }}>Take the Next Step</span>
         <h2 className="reveal rd1" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(36px, 5vw, 64px)', fontWeight: 300, lineHeight: 1.1, color: 'var(--cream)', maxWidth: 660, margin: '12px auto 18px', position: 'relative', zIndex: 1 }}>

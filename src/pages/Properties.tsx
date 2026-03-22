@@ -186,7 +186,7 @@ export default function Properties() {
               <div style={{ display: 'flex', gap: 3 }}>
                 {(['grid','list'] as const).map(v => (
                   <button key={v} onClick={() => setView(v)}
-                    style={{ padding: '7px 10px', border: '1px solid', borderColor: view === v ? 'var(--gold)' : 'var(--border)', background: view === v ? 'rgba(200,147,12,.08)' : 'transparent', color: view === v ? 'var(--gold-dk)' : 'var(--text-muted)', cursor: 'pointer', transition: 'all .25s' }}>
+                    style={{ padding: '7px 10px', border: '1px solid', borderColor: view === v ? 'var(--gold)' : 'var(--border)', background: view === v ? 'rgba(243,180,51,.08)' : 'transparent', color: view === v ? 'var(--gold-dk)' : 'var(--text-muted)', cursor: 'pointer', transition: 'all .25s' }}>
                     {v === 'grid'
                       ? <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                       : <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
@@ -252,7 +252,7 @@ function FGroup({ label, children, noBorder }: { label: string; children: React.
 function PgBtn({ label, onClick, active, disabled }: { label: string; onClick: () => void; active?: boolean; disabled?: boolean }) {
   return (
     <button onClick={onClick} disabled={disabled}
-      style={{ width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid', borderColor: active ? 'var(--gold)' : 'var(--border)', background: active ? 'rgba(200,147,12,.1)' : 'var(--card)', color: active ? 'var(--gold-dk)' : 'var(--text-muted)', fontSize: 13, cursor: disabled ? 'not-allowed' : 'pointer', opacity: disabled ? 0.4 : 1, transition: 'all .25s' }}>
+      style={{ width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid', borderColor: active ? 'var(--gold)' : 'var(--border)', background: active ? 'rgba(243,180,51,.1)' : 'var(--card)', color: active ? 'var(--gold-dk)' : 'var(--text-muted)', fontSize: 13, cursor: disabled ? 'not-allowed' : 'pointer', opacity: disabled ? 0.4 : 1, transition: 'all .25s' }}>
       {label}
     </button>
   );

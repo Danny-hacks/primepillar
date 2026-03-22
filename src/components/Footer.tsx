@@ -8,8 +8,7 @@ export default function Footer() {
       <div className="footer-grid">
         <div>
           <div className="footer-brand" onClick={() => goto('home')} style={{ cursor: 'pointer' }}>
-            <div className="footer-brand-mark">PP</div>
-            PRIME<span>PILLAR</span>
+            <img src="/logo-light.svg" alt="Prime Pillar" style={{ height: 28 }} />
           </div>
           <p className="footer-about">
             Redefining and reshaping the real estate industry of Mauritius since 2011.
