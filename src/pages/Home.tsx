@@ -16,6 +16,12 @@ const SERVICES = [
   { num: '06', title: 'Property Letting', desc: 'Full letting service connecting quality landlords with verified tenants, maximising your rental yield.', icon: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z' },
 ];
 
+const TEAM = [
+  { init: 'KM', name: 'Kentish Moorghen', creds: 'FRICS, MCABE', role: 'Chief Executive Officer', img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=80' },
+  { init: 'KD', name: 'Krishan Deeljore', creds: 'MCIPD', role: 'Independent Director', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&q=80' },
+  { init: 'PP', name: 'Advisory Team', creds: 'Experienced Professionals', role: 'Real Estate Advisors', img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&q=80' },
+];
+
 const TESTIMONIALS = [
   { quote: "Prime Pillar's valuation team was exceptional — professional, thorough, and the report was accepted by the bank immediately. Genuinely the best in the business.", name: 'Sylvie Randrianasolo', role: 'Property Owner, Grand Baie', init: 'S' },
   { quote: "We purchased our Cosy Garden villa through Prime Pillar and the experience was flawless from start to finish. Their team guided us with total transparency.", name: 'Marc & Isabelle Fontaine', role: 'Homebuyers, Quatre Bornes', init: 'M' },
@@ -147,30 +153,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FEATURED PROPERTIES ── */}
-      <section id="featured" className="sec" style={{ background: 'var(--bg-warm)' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 20, marginBottom: 48 }}>
-          <div>
-            <span className="eyebrow reveal">Latest Listings</span>
-            <h2 className="sec-title reveal rd1">Featured <em>Properties</em></h2>
-            <div className="gold-rule reveal rd2" />
-          </div>
-          <button className="btn btn-outline reveal" onClick={() => goto('properties')}>
-            View All Properties
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-        </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2 }} className="prop-grid-resp">
-          {featured.map((p, i) => (
-            <div key={p.id} className={`reveal rd${(i % 3) + 1}`}>
-              <PropertyCard property={p} />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── SERVICES ── */}
-      <section className="sec" style={{ background: 'var(--card)' }}>
+      {/* ── SERVICES (What We Do) ── */}
+      <section id="featured" className="sec" style={{ background: 'var(--card)' }}>
         <div className="text-center" style={{ marginBottom: 52 }}>
           <span className="eyebrow reveal">What We Do</span>
           <h2 className="sec-title reveal rd1">A Full Spectrum of <em>Real Estate Services</em></h2>
@@ -208,8 +192,66 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── FEATURED PROPERTIES ── */}
+      <section className="sec" style={{ background: 'var(--bg-warm)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 20, marginBottom: 48 }}>
+          <div>
+            <span className="eyebrow reveal">Latest Listings</span>
+            <h2 className="sec-title reveal rd1">Featured <em>Properties</em></h2>
+            <div className="gold-rule reveal rd2" />
+          </div>
+          <button className="btn btn-outline reveal" onClick={() => goto('properties')}>
+            View All Properties
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2 }} className="prop-grid-resp">
+          {featured.map((p, i) => (
+            <div key={p.id} className={`reveal rd${(i % 3) + 1}`}>
+              <PropertyCard property={p} />
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── PARTNERS ── */}
       <PartnersCarousel />
+
+      {/* ── THE TEAM ── */}
+      <section className="sec" style={{ background: 'var(--bg-warm)' }}>
+        <div className="text-center">
+          <span className="eyebrow reveal">Our People</span>
+          <h2 className="sec-title reveal rd1">The <em>Team</em></h2>
+          <div className="gold-rule center reveal rd2" />
+          <p className="lead reveal rd2" style={{ margin: '0 auto 48px' }}>The professionals behind Prime Pillar bring decades of combined expertise and a shared commitment to excellence.</p>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }} className="team-grid-resp">
+          {TEAM.map((m, i) => (
+            <div key={i} className={`reveal rd${i + 1}`}
+              style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', overflow: 'hidden', transition: 'border-color .3s, transform .3s' }}
+              onMouseEnter={e => { const d = e.currentTarget as HTMLDivElement; d.style.borderColor = 'var(--gold)'; d.style.transform = 'translateY(-3px)'; }}
+              onMouseLeave={e => { const d = e.currentTarget as HTMLDivElement; d.style.borderColor = 'var(--border)'; d.style.transform = ''; }}>
+              <div style={{ height: 260, overflow: 'hidden', position: 'relative' }}>
+                <img src={m.img} alt={m.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', filter: 'grayscale(20%)' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(20,10,2,.5) 0%, transparent 50%)' }} />
+                <div style={{ position: 'absolute', bottom: 16, left: 20 }}>
+                  <div style={{ fontSize: 10, letterSpacing: 2, textTransform: 'uppercase', color: 'var(--gold-pale)', fontWeight: 600 }}>{m.creds}</div>
+                </div>
+              </div>
+              <div style={{ padding: '24px 28px 28px' }}>
+                <div style={{ fontSize: 22, fontWeight: 500, color: 'var(--brown-deep)', marginBottom: 4 }}>{m.name}</div>
+                <div style={{ fontSize: 12, color: 'var(--gold-dk)', letterSpacing: 1 }}>{m.role}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="text-center reveal rd3" style={{ marginTop: 40 }}>
+          <button className="btn btn-outline" onClick={() => goto('about')}>
+            Learn More About Us
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </section>
 
       {/* ── TESTIMONIALS ── */}
       <section className="sec" style={{ background: 'var(--brown-deep)', position: 'relative', overflow: 'hidden' }}>
@@ -324,6 +366,7 @@ export default function Home() {
         @media (max-width: 900px) {
           .prop-grid-resp { grid-template-columns: 1fr !important; }
           .srv-grid-resp  { grid-template-columns: 1fr !important; }
+          .team-grid-resp  { grid-template-columns: 1fr !important; }
           .testi-grid-resp { grid-template-columns: 1fr !important; }
           .why-grid-resp  { grid-template-columns: 1fr !important; }
           .why-left-resp  { padding: 60px 24px !important; }
