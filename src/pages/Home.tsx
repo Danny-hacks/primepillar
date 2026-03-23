@@ -32,7 +32,7 @@ export default function Home() {
   const { goto } = useApp();
   const ref = useReveal();
 
-  const [searchMode, setSearchMode] = useState<'buy' | 'rent' | 'valuation'>('buy');
+  const [searchMode, setSearchMode] = useState<'buy' | 'rent'>('buy');
   const [sType, setSType] = useState('');
   const [sLoc, setSLoc] = useState('');
   const [sBudget, setSBudget] = useState('');
@@ -43,7 +43,7 @@ export default function Home() {
 
   const handleSearch = () => {
     goto('properties', {
-      filterStatus: searchMode === 'valuation' ? '' : searchMode,
+      filterStatus: searchMode,
       filterType: sType || undefined,
     });
   };
@@ -82,7 +82,7 @@ export default function Home() {
         <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 980, padding: '0 24px', marginTop: 48, animation: 'fadeUp .8s .6s both' }}>
           {/* Tabs */}
           <div style={{ display: 'flex' }}>
-            {(['buy', 'rent', 'valuation'] as const).map(tab => (
+            {(['buy', 'rent'] as const).map(tab => (
               <button key={tab} onClick={() => setSearchMode(tab)} style={{
                 fontSize: 10, letterSpacing: 2.5, textTransform: 'uppercase', fontWeight: 700,
                 padding: '11px 28px', border: 'none', cursor: 'pointer',
@@ -214,8 +214,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── OUR DEVELOPMENTS ── */}
+      <section className="sec" style={{ background: 'var(--card)' }}>
+        <div className="text-center">
+          <span className="eyebrow reveal">Our Projects</span>
+          <h2 className="sec-title reveal rd1">Our <em>Developments</em></h2>
+          <div className="gold-rule center reveal rd2" />
+          <p className="lead reveal rd2" style={{ margin: '0 auto 48px' }}>Award-winning residential developments crafted with precision, quality, and modern living in mind.</p>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }} className="dev-grid-resp">
+          {[
+            { name: 'Cosy Garden 5', location: 'Quatre Bornes', status: 'Sold Out', desc: 'The flagship Cosy Garden brand — a decade of redefining residential living in Mauritius.', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80' },
+            { name: 'Cosy Garden 6', location: 'Quatre Bornes', status: 'Ongoing', desc: 'Growing in quality and product variety. Premium units starting from Rs 7,500,000.', img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80' },
+            { name: 'The Pride', location: 'Mauritius', status: 'Coming Soon', desc: 'An exciting new development from Prime Pillar — details coming soon.', img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80' },
+          ].map((dev, i) => (
+            <div key={i} className={`reveal rd${i + 1}`}
+              style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', overflow: 'hidden', transition: 'border-color .3s, transform .3s' }}
+              onMouseEnter={e => { const d = e.currentTarget as HTMLDivElement; d.style.borderColor = 'var(--gold)'; d.style.transform = 'translateY(-3px)'; }}
+              onMouseLeave={e => { const d = e.currentTarget as HTMLDivElement; d.style.borderColor = 'var(--border)'; d.style.transform = ''; }}>
+              <div style={{ height: 220, overflow: 'hidden', position: 'relative' }}>
+                <img src={dev.img} alt={dev.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <div style={{ position: 'absolute', top: 14, right: 14, padding: '5px 14px', borderRadius: 'var(--radius-sm)', background: dev.status === 'Ongoing' ? 'var(--gold)' : 'var(--brown-deep)', color: dev.status === 'Ongoing' ? 'var(--brown-deep)' : 'var(--cream)', fontSize: 10, letterSpacing: 1.5, textTransform: 'uppercase', fontWeight: 700 }}>
+                  {dev.status}
+                </div>
+              </div>
+              <div style={{ padding: '24px 28px 28px' }}>
+                <h3 style={{ fontSize: 18, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 6 }}>{dev.name}</h3>
+                <p style={{ fontSize: 13, color: 'var(--text-mid)', lineHeight: 1.6, marginBottom: 10 }}>{dev.desc}</p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 12, color: 'var(--text-mid)' }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dk)" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  {dev.location}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── PARTNERS ── */}
-      <PartnersCarousel />
+      <PartnersCarousel label="Our Trusted Partners" />
 
       {/* ── THE TEAM ── */}
       <section className="sec" style={{ background: 'var(--bg-warm)' }}>
@@ -366,6 +403,7 @@ export default function Home() {
         @media (max-width: 900px) {
           .prop-grid-resp { grid-template-columns: 1fr !important; }
           .srv-grid-resp  { grid-template-columns: 1fr !important; }
+          .dev-grid-resp  { grid-template-columns: 1fr !important; }
           .team-grid-resp  { grid-template-columns: 1fr !important; }
           .testi-grid-resp { grid-template-columns: 1fr !important; }
           .why-grid-resp  { grid-template-columns: 1fr !important; }
